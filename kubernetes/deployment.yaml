@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: ac-lab-fin
-          image: felixbirca2/ac-lab-1
+          image: felixbirca2/ac-lab-1:latest
           imagePullPolicy: Always
           ports:
             - containerPort: 8080
