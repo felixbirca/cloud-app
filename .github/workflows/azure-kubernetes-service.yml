@@ -39,7 +39,7 @@ env:
   CONTAINER_NAME: "your-container-name"
   RESOURCE_GROUP: "ac-labs"
   CLUSTER_NAME: "ac-labs-kluster"
-  DEPLOYMENT_MANIFEST_PATH: "./deployment.yaml"
+  DEPLOYMENT_MANIFEST_PATH: "."
 
 jobs:
   deploy:
