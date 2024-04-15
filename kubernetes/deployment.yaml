@@ -19,14 +19,14 @@ spec:
           imagePullPolicy: Always
           ports:
             - containerPort: 8080
-          # readinessProbe:
-          #   httpGet:
-          #     path: /actuator/health
-          #     port: 8080
-          #   initialDelaySeconds: 5
-          # livenessProbe:
-          #   httpGet:
-          #     path: /actuator/health
-          #     port: 8080
-          #   initialDelaySeconds: 5
+          readinessProbe:
+            httpGet:
+              path: /
+              port: 8080
+            initialDelaySeconds: 120
+          livenessProbe:
+            httpGet:
+              path: /
+              port: 8080
+            initialDelaySeconds: 120
       # restartPolicy: Always
