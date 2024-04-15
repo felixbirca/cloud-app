@@ -1,0 +1,33 @@
+
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: ac-lab-fin
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: ac-lab-fin
+  template:
+    metadata:
+      labels:
+        app: ac-lab-fin
+    spec:
+      replicas: 3
+      containers:
+        - name: ac-lab-fin
+          image: felixbirca2/ac-lab-1
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8080
+          # readinessProbe:
+          #   httpGet:
+          #     path: /actuator/health
+          #     port: 8080
+          #   initialDelaySeconds: 5
+          # livenessProbe:
+          #   httpGet:
+          #     path: /actuator/health
+          #     port: 8080
+          #   initialDelaySeconds: 5
+      # restartPolicy: Always
