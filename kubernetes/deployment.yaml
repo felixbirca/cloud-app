@@ -16,7 +16,7 @@ spec:
       containers:
         - name: ac-lab-fin
           image: felixbirca2/ac-lab-1
-          imagePullPolicy: IfNotPresent
+          imagePullPolicy: Always
           ports:
             - containerPort: 8080
           # readinessProbe:
