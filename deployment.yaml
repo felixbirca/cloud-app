@@ -13,7 +13,6 @@ spec:
       labels:
         app: ac-lab-fin
     spec:
-      replicas: 3
       containers:
         - name: ac-lab-fin
           image: felixbirca2/ac-lab-1
