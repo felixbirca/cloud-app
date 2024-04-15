@@ -4,6 +4,7 @@
 
 1. This project should be made to run as a Docker image.
 2. Docker image should be published to a Docker registry.
+https://hub.docker.com/r/felixbirca2/ac-lab-1
 3. Docker image should be deployed to a Kubernetes cluster.
 4. Kubernetes cluster should be running on a cloud provider.
 5. Kubernetes cluster should be accessible from the internet.
