@@ -38,7 +38,7 @@ env:
   AZURE_CONTAINER_REGISTRY: "ac-labs-kluster"
   CONTAINER_NAME: "your-container-name"
   RESOURCE_GROUP: "ac-labs"
-  CLUSTER_NAME: "ac-lab-fin"
+  CLUSTER_NAME: "ac-labs-kluster"
   DEPLOYMENT_MANIFEST_PATH: "./deployment.yaml"
 
 jobs:
