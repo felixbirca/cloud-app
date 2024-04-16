@@ -1,10 +1,11 @@
-kind: Service
 apiVersion: v1
+kind: Service
 metadata:
-  name: ac-lab-fin-front
+  name: ac-lab-1-service
 spec:
-  type: LoadBalancer
+  type: LoadBalancer  # Exposes the service outside of the cluster
   ports:
-    - port: 80
+  - port: 80  # The port the service will be accessible on outside the cluster
+    targetPort: 8080  # The port on the container to send traffic to
   selector:
-    app: ac-lab-fin-front
+    app: ac-lab-1
