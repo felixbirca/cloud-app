@@ -5,25 +5,26 @@
   spec:
     finalizers:
       - kubernetes
+
 - apiVersion: apps/v1
   kind: Deployment
   metadata:
-    name: ac-lab-fin-back
+    name: ac-lab-fin-front
     namespace: ac-lab-fin
   spec:
     replicas: 1
     selector:
       matchLabels:
-        app: ac-lab-fin-back
+        app: ac-lab-fin-front
     template:
       metadata:
         labels:
-          app: ac-lab-fin-back
+          app: ac-lab-fin-front
       spec:
         nodeSelector:
           beta.kubernetes.io/os: linux
         containers:
-          - name: ac-lab-fin-back
+          - name: ac-lab-fin-front
             image: felixbirca2/ac-lab-1:latest
             resources:
               requests:
@@ -34,14 +35,14 @@
                 memory: 256Mi
             ports:
               - containerPort: 8080
-                name: redis
 - apiVersion: v1
   kind: Service
   metadata:
-    name: ac-lab-fin-back
+    name: ac-lab-fin-front
     namespace: ac-lab-fin
   spec:
+    type: LoadBalancer
     ports:
-      - port: 8080
+      - port: 80
     selector:
-      app: ac-lab-fin-back
+      app: ac-lab-fin-front
