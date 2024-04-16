@@ -3,12 +3,12 @@
 ### Requirements
 
 1. This project should be made to run as a Docker image. ✅
-2. Docker image should be published to a Docker registry. ✅
-https://hub.docker.com/r/felixbirca2/ac-lab-1
+2. Docker image should be published to a Docker registry. ✅\
+https://hub.docker.com/r/felixbirca2/ac-lab-1\
 (a private registry is used for the deployment)
 4. Docker image should be deployed to a Kubernetes cluster. ✅
 6. Kubernetes cluster should be running on a cloud provider. ✅
-7. Kubernetes cluster should be accessible from the internet. ✅
+7. Kubernetes cluster should be accessible from the internet. ✅\
 http://4.209.247.208/
 9. Kubernetes cluster should be able to scale the application.
 10. Kubernetes cluster should be able to update the application without downtime.
