@@ -81,4 +81,4 @@ jobs:
         with:
           action: deploy
           manifests: ${{ env.DEPLOYMENT_MANIFEST_PATH }}
-          images: https://hub.docker.com/r/felixbirca2/ac-lab-1
+          images: felixbirca2/ac-lab-1:latest
