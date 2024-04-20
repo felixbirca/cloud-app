@@ -23,8 +23,8 @@ spec:
         ports:
         - containerPort: 8080  # Adjust the port if your app uses a different one
       livenessProbe:
-      httpGet:
-        path: /health-check
-        port: 8080
-      initialDelaySeconds: 60
-      periodSeconds: 5
+        httpGet:
+          path: /health-check
+          port: 8080
+        initialDelaySeconds: 60
+        periodSeconds: 5
