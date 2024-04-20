@@ -11,8 +11,8 @@ https://hub.docker.com/r/felixbirca2/ac-lab-1 \
 7. Kubernetes cluster should be accessible from the internet. ✅\
 http://4.209.247.208/
 9. Kubernetes cluster should be able to scale the application.
-10. Kubernetes cluster should be able to update the application without downtime.
-11. Kubernetes cluster should be able to rollback the application to a previous version.
+10. Kubernetes cluster should be able to update the application without downtime. ✅\
+11. Kubernetes cluster should be able to rollback the application to a previous version. ✅\
 12. Kubernetes cluster should be able to monitor the application.
 13. Kubernetes cluster should be able to autoscale the application based on the load.
 
