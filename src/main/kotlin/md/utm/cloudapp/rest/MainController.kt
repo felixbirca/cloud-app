@@ -13,12 +13,12 @@ class MainController {
     }
 
     @GetMapping("/health-check")
-    fun healthCheck(): ResponseEntity<String> {
-        return if (Random.nextBoolean()) {
-            ResponseEntity.ok("Healthy")
+    fun healthCheck(): String {
+        if (Random.nextBoolean()) {
+            return "Healthy"
         } else {
-            ResponseEntity.status(HttpStatus.SERVICE_UNAVAILABLE).body("Unhealthy")
+            throw Exception("Not Healthy")
+            return "Not Healthy"
         }
     }
-    
 }
