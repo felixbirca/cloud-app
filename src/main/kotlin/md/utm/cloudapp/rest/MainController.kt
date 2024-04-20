@@ -2,6 +2,7 @@ package md.utm.cloudapp.rest
 
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RestController
+import kotlin.random.Random
 
 @RestController
 class MainController {
@@ -13,7 +14,6 @@ class MainController {
 
     @GetMapping("/health-check")
     fun healthCheck(): ResponseEntity<String> {
-        // Randomly decide whether the service is healthy or not
         return if (Random.nextBoolean()) {
             ResponseEntity.ok("Healthy")
         } else {
