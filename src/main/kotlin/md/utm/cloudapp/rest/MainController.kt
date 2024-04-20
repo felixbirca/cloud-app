@@ -10,4 +10,15 @@ class MainController {
     fun main(): String {
         return "Hello World by team Irina, Felix and Nichita!"
     }
+
+    @GetMapping("/health-check")
+    fun healthCheck(): ResponseEntity<String> {
+        // Randomly decide whether the service is healthy or not
+        return if (Random.nextBoolean()) {
+            ResponseEntity.ok("Healthy")
+        } else {
+            ResponseEntity.status(HttpStatus.SERVICE_UNAVAILABLE).body("Unhealthy")
+        }
+    }
+    
 }
