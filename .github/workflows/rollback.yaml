@@ -7,8 +7,18 @@ on:
         description: 'Deployment version to rollback to'
         required: true
 
+env:
+    ACR_RESOURCE_GROUP: ac-labs
+    AZURE_CONTAINER_REGISTRY: acrworkflow1713257063064
+    CLUSTER_NAME: ac-labs-kluster
+    CLUSTER_RESOURCE_GROUP: ac-labs
+    CONTAINER_NAME: image-workflow-1713257063064
+
 jobs:
   deploy:
+    permissions:
+        contents: read
+        id-token: write
     runs-on: ubuntu-latest
     steps:
     - name: Checkout code
@@ -37,7 +47,7 @@ jobs:
 
     - name: Connect to AKS
       run: |
-        az aks get-credentials --resource-group <YourResourceGroup> --name <YourClusterName> --overwrite-existing
+        az aks get-credentials --resource-group ${{env.ACR_RESOURCE_GROUP}} --name ${{env.CLUSTER_NAME}} --overwrite-existing
 
     - name: Rollback to previous deployment version
-      run: kubectl rollout undo deployment/<your-deployment-name> --to-revision=${{ github.event.inputs.version }}
+      run: kubectl rollout undo deployment/ac-lab-1-deployment
