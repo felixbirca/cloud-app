@@ -14,13 +14,20 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
     
-    - name: Login to Azure
-      uses: azure/login@v1
+    # - name: Login to Azure
+    #   uses: azure/login@v1
+    #   with:
+    #     client-id: ${{ secrets.AZURE_CLIENT_ID }}
+    #     client-secret: ${{ secrets.AZURE_CLIENT_SECRET }}
+    #     tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+    #     subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+
+    - name: Azure login
+      uses: azure/login@92a5484dfaf04ca78a94597f4f19fea633851fa2
       with:
         client-id: ${{ secrets.AZURE_CLIENT_ID }}
-        client-secret: ${{ secrets.AZURE_CLIENT_SECRET }}
-        tenant-id: ${{ secrets.AZURE_TENANT_ID }}
         subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+        tenant-id: ${{ secrets.AZURE_TENANT_ID }}
 
     - name: Install kubectl
       run: |
