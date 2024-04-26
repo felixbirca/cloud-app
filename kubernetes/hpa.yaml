@@ -1,0 +1,12 @@
+apiVersion: autoscaling/v1
+kind: HorizontalPodAutoscaler
+metadata:
+  name: ac-lab-1-hpa
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: ac-lab-1-deployment
+  minReplicas: 3
+  maxReplicas: 10
+  targetCPUUtilizationPercentage: 80
