@@ -13,6 +13,7 @@ env:
     DEPLOYMENT_MANIFEST_PATH: |
         ./kubernetes/deployment.yaml
         ./kubernetes/service.yaml
+        ./kubernetes/hpa.yaml
 jobs:
     buildImage:
         permissions:
